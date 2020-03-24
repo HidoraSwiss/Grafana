@@ -1,0 +1,23 @@
+type: install
+name: Grafana
+categories: ["apps/dev-and-admin-tools", "apps/popular"]
+displayName: Grafana
+homepage: https://github.com/HidoraSwiss/Grafana
+logo: https://github.com/HidoraSwiss/Grafana/raw/master/grafana.png
+description: Grafana is a multi-platform open source analytics and interactive visualization software available since 2014. It provides charts, graphs, and alerts for the web when connected to supported data sources. It is expandable through a plug-in system. End users can create complex monitoring dashboards using interactive query builders.
+
+
+nodes:
+  - image: grafana/grafana
+    count: 1
+    cloudlets: 16
+    nodeGroup: cp
+    skipNodeEmails: true
+    diskLimit: 50G
+
+
+success: |
+  ## Grafana is ready
+  **URL** : [https://${env.domain}](https://${env.domain})
+
+  **Credentials** : admin / admin
